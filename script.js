@@ -3,12 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  //set up empty Array for character parameters
+  //set up empty array, password length, and character parameter variables
   const passwordArray = [];
+  let passwordLength, hasLowercase, hasUppercase, hasNumbers, hasSpecials;
 
   //asks user how many characters and checks for valid input
   for (var i = 0; i < 1; i++) {
-    const passwordLength = prompt("How many characters do you want your password to contain? (Your password must contain between 8 and 128 characters).");
+    passwordLength = prompt("How many characters do you want your password to contain? (Your password must contain between 8 and 128 characters).");
     console.log(passwordLength);
 
     if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -19,16 +20,16 @@ function generatePassword() {
 
   //booleans for other character parameters and checks at least one is selected
   for (var i = 0; i < 1; i++) {
-    const hasLowercase = confirm("Do you want your password to include lowercase letters?");
+    hasLowercase = confirm("Do you want your password to include lowercase letters?");
     console.log(hasLowercase);
 
-    const hasUppercase = confirm("Do you want your password to include uppercase letters?");
+    hasUppercase = confirm("Do you want your password to include uppercase letters?");
     console.log(hasUppercase);
 
-    const hasNumbers = confirm("Do you want your password to include numbers?");
+    hasNumbers = confirm("Do you want your password to include numbers?");
     console.log(hasNumbers);
 
-    const hasSpecials = confirm("Do you want your password to include special characters?");
+    hasSpecials = confirm("Do you want your password to include special characters?");
     console.log(hasSpecials);
 
     if (!hasLowercase && !hasUppercase && !hasNumbers && !hasSpecials) {

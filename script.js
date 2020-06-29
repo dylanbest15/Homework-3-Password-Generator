@@ -3,7 +3,8 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  //set up empty array, password length, and character parameter variables
+  //set up empty arrays, password length, and character parameter variables
+  const characterArray = [];
   const passwordArray = [];
   let passwordLength, hasLowercase, hasUppercase, hasNumbers, hasSpecials;
 
@@ -44,7 +45,7 @@ function generatePassword() {
   if (hasLowercase) {
     for (var i = 97; i < 123; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
   }
 
@@ -52,7 +53,7 @@ function generatePassword() {
   if (hasUppercase) {
     for (var i = 65; i < 91; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
   }
 
@@ -60,7 +61,7 @@ function generatePassword() {
   if (hasNumbers) {
     for (var i = 48; i < 58; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
   }
 
@@ -68,26 +69,34 @@ function generatePassword() {
   if (hasSpecials) {
     for (var i = 33; i < 48; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
     for (var i = 58; i < 65; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
     for (var i = 91; i < 97; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
     for (var i = 123; i < 127; i++) {
       const asciiCode = String.fromCharCode(i);
-      passwordArray.push(asciiCode);
+      characterArray.push(asciiCode);
     }
+  }
+
+  console.log(characterArray);
+
+  //randomy generates password into array
+  for (i = 0; i < passwordLength; i++) {
+    let passwordChar = characterArray[Math.floor(Math.random() * characterArray.length)];
+    passwordArray.push(passwordChar);
   }
 
   console.log(passwordArray);
 
-
-  password = "ABBY BOMBERGER SUCKS TOES";
+  // converts array into string and returns password
+  password = passwordArray.join("");
   return password;
 
 }

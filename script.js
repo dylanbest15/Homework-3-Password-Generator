@@ -9,18 +9,22 @@ function generatePassword() {
   let passwordLength, hasLowercase, hasUppercase, hasNumbers, hasSpecials;
 
   //asks user how many characters and checks for valid input
-  for (var i = 0; i < 1; i++) {
+  let isvalid = false;
+  while (!isvalid) {
     passwordLength = prompt("How many characters do you want your password to contain? (Your password must contain between 8 and 128 characters).");
     console.log(passwordLength);
 
-    if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) { 
       alert("You must enter a valid number of characters! (8 - 128).");
-      i--;
+    }
+    else {
+      isvalid = true;
     }
   }
 
   //booleans for other character parameters and checks at least one is selected
-  for (var i = 0; i < 1; i++) {
+  let isvalid2 = false;
+  while (!isvalid2) {
     hasLowercase = confirm("Do you want your password to include lowercase letters?");
     console.log(hasLowercase);
 
@@ -35,7 +39,9 @@ function generatePassword() {
 
     if (!hasLowercase && !hasUppercase && !hasNumbers && !hasSpecials) {
       alert("You must select at least one parameter to generate a password!")
-      i--;
+    }
+    else {
+      isvalid2 = true;
     }
   }
 

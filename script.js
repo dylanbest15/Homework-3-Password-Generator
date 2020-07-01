@@ -50,44 +50,37 @@ function generatePassword() {
   //adds lowercase letters using ascii values to array
   if (hasLowercase) {
     for (var i = 97; i < 123; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
   }
 
   //adds uppercase letters using ascii values to array
   if (hasUppercase) {
     for (var i = 65; i < 91; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
   }
 
   //adds digits 0-9  using ascii values to array
   if (hasNumbers) {
     for (var i = 48; i < 58; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
   }
 
   //adds special characters using ascii values to array
   if (hasSpecials) {
     for (var i = 33; i < 48; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
     for (var i = 58; i < 65; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
     for (var i = 91; i < 97; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
     for (var i = 123; i < 127; i++) {
-      const asciiCode = String.fromCharCode(i);
-      characterArray.push(asciiCode);
+      characterArray.push(String.fromCharCode(i));
     }
   }
 
